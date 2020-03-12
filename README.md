@@ -1,6 +1,5 @@
 # Nextstrain analyses with hCoV-19 sequences in the SRA.
 
-## The Omen workflow: combining augur, auspice, and SRA
 ## What is this workflow?
 Labs around the world are sequencing coronavirus (hCoV-19) to monitor how it spreads and evolves. However, most sequences are not immediately publicly availible. Here we provide a workflow to identfy publicly available hCoV-19 sequences that have been uploaded to the NCBI SRA database. We map SRA reads to the hCoV-19 Whuan reference genome, identify variable sites, create a consensus fasta sequence, and analyse these sequences with [Nextstrain](https://github.com/nextstrain/ncov).
 
