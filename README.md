@@ -1,7 +1,7 @@
 # What does this do?
 Labs around the world are sequencing hCoV-19 to monitor how it spreads and evolves. However, most sequences are not immediately publicly availible.  
 
-## Workflow to analyzing publicly available hCoV-19 SRA reads with Nextstrain
+## Workflow to analyze publicly available hCoV-19 SRA reads with Nextstrain
 1. Identify metadata to match Nexstrain input
 2. Download SRA data
 3. Align reads to Wuhan reference genome
