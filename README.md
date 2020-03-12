@@ -1,24 +1,33 @@
-# What does this do?
-Labs around the world are sequencing hCoV-19 to monitor how it spreads and evolves. However, most sequences are not immediately publicly availible.  
+# Nextstrain analyses with hCoV-19 sequences in the SRA.
+
+## What is this workflow?
+Labs around the world are sequencing coronavirus (hCoV-19) to monitor how it spreads and evolves. However, most sequences are not immediately publicly availible. Here we provide a workflow to identfy publicly available hCoV-19 sequences that have been uploaded to the NCBI SRA database. We map SRA reads to the hCoV-19 Whuan reference genome, identify variable sites, create a consensus fasta sequence, and analyse these sequences with [Nextstrain](https://github.com/nextstrain/ncov).
 
 ## Workflow to analyze publicly available hCoV-19 SRA reads with Nextstrain
-1. Identify metadata to match Nexstrain input
-2. Download SRA data
-3. Align reads to Wuhan reference genome
+1. Identify hCoV-19 sequences using the NCBI SRA Taxonomy Analysis Tool (STAT) 
+2. Extract metadata to match Nexstrain input
+3. Download SRA data and generate consensus sequences for each run
 4. Run Nextstrain for analyses and visualization
-## 1. Metadata
-Identify hCoV-19 SRA reads and wrangle metadta to create Nextstrain metadata.tsv
-metadata.tsv contains: strain	virus	gisaid_epi_isl	genbank_accession	date	region	country	division	division_exposure	location	segment	length	host	age	sex	originating_lab	submitting_lab	authors	url	title
-## 2. Download SRA data
-download hCoV-19 SRA reads to vm
-## 3. Align reads to Wuhan reference genome
-with hisat2
-## 4. Run Nextstrain for analyses and visualization
-run snakemake
 
-# Forthcoming features
+### 1. Identify hCoV-19 sequences using the NCBI SRA Taxonomy Analysis Tool (STAT)
+Vadim Identify hCoV-19 SRA reads with STAT
+### 2. Extract metadata to match Nexstrain input
+Alison metadata wrangling
+### 3. Download SRA data and generate consensus sequences for each run
+Alison snakemake. 
+a. download SRA reads
+b. map to Wuhan reference genome
+c. identify variable sites
+d. generate consensus sequence
+### 4. Run Nextstrain for analyses and visualization
+snakemake in the cloud
 
 # Team
+Our fearless leader: Vadim Zalunin (vadimzalunin)
+Alison Schaefer (amaiellu)
+Joe McGirr (joemcgirr)
+
+# Forthcoming features
 
 # Architecture
 
