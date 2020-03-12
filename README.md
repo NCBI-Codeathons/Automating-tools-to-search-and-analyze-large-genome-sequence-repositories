@@ -24,9 +24,11 @@ d. generate consensus sequence
 snakemake in the cloud
 
 # Team
-Our fearless leader: Vadim Zalunin (vadimzalunin) \n
-Alison Schaefer (amaiellu) \n
-Joe McGirr (joemcgirr) \n
+Our fearless leader: Vadim Zalunin (vadimzalunin)
+
+Alison Schaefer (amaiellu)
+
+Joe McGirr (joemcgirr)
 
 # Forthcoming features
 
