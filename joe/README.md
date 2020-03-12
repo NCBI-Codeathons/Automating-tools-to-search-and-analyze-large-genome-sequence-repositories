@@ -1,1 +1,35 @@
-# Automating-tools-to-search-and-analyze-large-genome-sequence-repositories
+# running test assemblies
+## 1. make 5 test fastas from one assembly
+
+```
+wget https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/009/937/885/GCA_009937885.1_ASM993788v1/GCA_009937885.1_ASM993788v1_genomic.fna.gz
+
+tail -n +2 GCA_009937885.1_ASM993788v1_genomic.fasta > test1
+sed '1 i\>test1/2019' test1 > fasta.test1
+
+tail -n +2 GCA_009937885.1_ASM993788v1_genomic.fasta > test2
+sed '1 i\>test2/2019' test2 > fasta.test2
+
+tail -n +2 GCA_009937885.1_ASM993788v1_genomic.fasta > test3
+sed '1 i\>test3/2019' test3 > fasta.test3
+
+tail -n +2 GCA_009937885.1_ASM993788v1_genomic.fasta > test4
+sed '1 i\>Wuhan-Hu-1/2019' test4 > fasta.test4
+
+tail -n +2 GCA_009937885.1_ASM993788v1_genomic.fasta > test5
+sed '1 i\>Wuhan/WH01/2019' test5 > fasta.test5
+```
+## 2. make random deletions in test fastas with nano to simulate variation
+
+```
+cat fasta.test1 fasta.test2 fasta.test3 fasta.test4 fasta.test5 > /home/joemcgirr/ncov-master/ncov-master/data/sequences.fasta
+```
+
+## 3. put `metadata.tsv` and `sequences.fasta` in /data
+## 4. run `snakemake -p`
+## 5. visualize results
+```
+sudo docker run --privileged -v /var/run/docker.sock:/var/run/docker.sock -p 4000:4000 -v $PWD:/workdir -w /workdir -it nextstrain/base bash
+nextstrain view auspice/
+```
+
