@@ -1,4 +1,4 @@
-# running test assemblies
+# running test assemblies with Nextstrain
 ## 1. make 5 test fastas from one assembly
 
 ```
