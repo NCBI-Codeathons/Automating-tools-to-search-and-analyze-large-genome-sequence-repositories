@@ -5,8 +5,8 @@ Labs around the world are sequencing coronavirus (hCoV-19) to monitor how it spr
 
 ## Workflow to analyze publicly available hCoV-19 SRA reads with Nextstrain
 1. Identify hCoV-19 sequences
-  *using the NCBI SRA Taxonomy Analysis Tool (STAT)
-  *using whole genome assemblies [here](https://www.ncbi.nlm.nih.gov/core/assets/genbank/files/ncov-sequences.yaml)
+- using the NCBI SRA Taxonomy Analysis Tool (STAT)
+- using whole genome assemblies [here](https://www.ncbi.nlm.nih.gov/core/assets/genbank/files/ncov-sequences.yaml)
 2. Extract metadata to match Nexstrain input
 3. Download SRA data
 4. Run Nextstrain for analyses and visualization
@@ -33,11 +33,9 @@ auspice view --datasetDir auspice
 ```
 
 # Team
-Our fearless leader: Vadim Zalunin (vadimzalunin)
-
-Alison Schaefer (amaiellu)
-
-Joe McGirr (joemcgirr)
+- Our fearless leader: Vadim Zalunin (vadimzalunin)
+- Alison Schaefer (amaiellu)
+- Joe McGirr (joemcgirr)
 
 # Forthcoming features
 We are automating the process of wrangling metadata for full genome assemblies. 
