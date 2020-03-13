@@ -10,7 +10,7 @@ Labs around the world are sequencing coronavirus (hCoV-19) to monitor how it spr
 4. Run Nextstrain for analyses and visualization
 
 
-![alt text](https://github.com/NCBI-Codeathons/Automating-tools-to-search-and-analyze-large-genome-sequence-repositories/blob/master/workflow_photo.png "Logo Title Text 1")
+![alt text](https://github.com/NCBI-Codeathons/Automating-tools-to-search-and-analyze-large-genome-sequence-repositories/blob/master/workflow-01.png "Logo Title Text 1")
 
 
 ### 1. Identify hCoV-19 sequences using the NCBI SRA Taxonomy Analysis Tool (STAT)
