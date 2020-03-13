@@ -22,10 +22,10 @@ The NCBI SRA Taxonomy Analysis Tool (STAT) can identify SRA runs with kmers matc
 We created a snakemake that will create `metadata.tsv` containing metadata for SRA runs identified with STAT.
 ### 3. Download SRA data and generate consensus sequences for each run
 The snakemake will also generate `sequences.fasta` by 
-  *downloading SRA reads
-  *mapping them to the [Wuhan reference genome](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3/) (hisat2)
-  *identifying variable sites
-  *generate consensus sequences (bcftools)
+- downloading SRA reads
+- mapping them to the [Wuhan reference genome](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3/) (hisat2)
+- identifying variable sites
+- generate consensus sequences (bcftools)
 ### 4. Run Nextstrain for analyses and visualization
 Finally, we add `metadata.tsv` `sequences.fasta` and run snakemake -p to produce Nextstrain results that can be viewed with
 ```
