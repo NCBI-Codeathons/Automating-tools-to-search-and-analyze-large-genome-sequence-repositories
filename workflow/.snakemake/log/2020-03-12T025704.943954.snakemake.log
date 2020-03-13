@@ -1,0 +1,3 @@
+WorkflowError in line 1 of /home/amaiellu/snakefile:
+Config file is not valid JSON or YAML. In case of YAML, make sure to not mix whitespace and tab indentation.
+  File "/home/amaiellu/snakefile", line 1, in <module>

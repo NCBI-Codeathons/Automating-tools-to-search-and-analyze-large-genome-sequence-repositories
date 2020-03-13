@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 4 of /home/amaiellu/snakefile:
+Missing input files for rule all:
+data/qconfig.json

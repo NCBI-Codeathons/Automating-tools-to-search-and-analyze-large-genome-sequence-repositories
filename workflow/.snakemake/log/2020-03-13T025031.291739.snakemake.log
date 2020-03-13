@@ -1,0 +1,30 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	count_check
+	1	hisat2_align
+	3
+
+[Fri Mar 13 02:50:31 2020]
+rule hisat2_align:
+    output: data/mappedreads/counts.bam
+    jobid: 23
+    wildcards: accession=counts
+
+[Fri Mar 13 02:50:31 2020]
+Error in rule hisat2_align:
+    jobid: 23
+    output: data/mappedreads/counts.bam
+    shell:
+        hisat2 -x data/indexfiles/sra --sra-acc counts| samtools view -Sb -F4 - | samtools sort - > data/mappedreads/counts.bam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job hisat2_align since they might be corrupted:
+data/mappedreads/counts.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T025031.291739.snakemake.log

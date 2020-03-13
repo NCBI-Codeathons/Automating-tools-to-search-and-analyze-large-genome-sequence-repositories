@@ -1,0 +1,674 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	10	bcfindex
+	10	consensus
+	10	count_check
+	10	hisat2_align
+	10	mpileup
+	10	replace_name
+	61
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11092064.bam
+    jobid: 36
+    wildcards: accession=SRR11092064
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11241255.bam
+    jobid: 37
+    wildcards: accession=SRR11241255
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247077.bam
+    jobid: 35
+    wildcards: accession=SRR11247077
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR2063922.bam
+    jobid: 39
+    wildcards: accession=SRR2063922
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR10971381.bam
+    jobid: 33
+    wildcards: accession=SRR10971381
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR2063913.bam
+    jobid: 32
+    wildcards: accession=SRR2063913
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140748.bam
+    jobid: 40
+    wildcards: accession=SRR11140748
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR1910449.bam
+    jobid: 38
+    wildcards: accession=SRR1910449
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR8189998.bam
+    jobid: 31
+    wildcards: accession=SRR8189998
+
+
+[Fri Mar 13 01:41:10 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247075.bam
+    jobid: 34
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 01:41:10 2020]
+Finished job 34.
+1 of 61 steps (2%) done
+
+[Fri Mar 13 01:41:11 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11247075.bam
+    output: data/calls/SRR11247075.vcf.gz
+    jobid: 47
+    wildcards: accession=SRR11247075
+
+
+[Fri Mar 13 01:41:11 2020]
+rule count_check:
+    input: data/mappedreads/SRR11247075.bam
+    output: data/counts/SRR11247075.txt
+    jobid: 14
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 01:41:11 2020]
+Finished job 14.
+2 of 61 steps (3%) done
+[Fri Mar 13 01:41:12 2020]
+Finished job 47.
+3 of 61 steps (5%) done
+
+[Fri Mar 13 01:41:12 2020]
+rule bcfindex:
+    input: data/calls/SRR11247075.vcf.gz
+    output: data/calls/SRR11247075.vcf.gz.csi
+    jobid: 48
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 01:41:12 2020]
+Finished job 48.
+4 of 61 steps (7%) done
+
+[Fri Mar 13 01:41:12 2020]
+rule consensus:
+    input: data/calls/SRR11247075.vcf.gz, data/calls/SRR11247075.vcf.gz.csi
+    output: data/consensus/SRR11247075_consensus.fa
+    jobid: 24
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 01:41:12 2020]
+Finished job 24.
+5 of 61 steps (8%) done
+
+[Fri Mar 13 01:41:12 2020]
+rule replace_name:
+    input: data/consensus/SRR11247075_consensus.fa
+    output: data/consensusfinal/SRR11247075_fconsensus.fa
+    jobid: 4
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 01:41:12 2020]
+Finished job 4.
+6 of 61 steps (10%) done
+[Fri Mar 13 01:41:13 2020]
+Finished job 37.
+7 of 61 steps (11%) done
+
+[Fri Mar 13 01:41:13 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11241255.bam
+    output: data/calls/SRR11241255.vcf.gz
+    jobid: 53
+    wildcards: accession=SRR11241255
+
+
+[Fri Mar 13 01:41:13 2020]
+rule count_check:
+    input: data/mappedreads/SRR11241255.bam
+    output: data/counts/SRR11241255.txt
+    jobid: 17
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 01:41:14 2020]
+Finished job 17.
+8 of 61 steps (13%) done
+[Fri Mar 13 01:41:29 2020]
+Finished job 53.
+9 of 61 steps (15%) done
+
+[Fri Mar 13 01:41:29 2020]
+rule bcfindex:
+    input: data/calls/SRR11241255.vcf.gz
+    output: data/calls/SRR11241255.vcf.gz.csi
+    jobid: 54
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 01:41:29 2020]
+Finished job 54.
+10 of 61 steps (16%) done
+
+[Fri Mar 13 01:41:29 2020]
+rule consensus:
+    input: data/calls/SRR11241255.vcf.gz, data/calls/SRR11241255.vcf.gz.csi
+    output: data/consensus/SRR11241255_consensus.fa
+    jobid: 27
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 01:41:29 2020]
+Finished job 27.
+11 of 61 steps (18%) done
+
+[Fri Mar 13 01:41:29 2020]
+rule replace_name:
+    input: data/consensus/SRR11241255_consensus.fa
+    output: data/consensusfinal/SRR11241255_fconsensus.fa
+    jobid: 7
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 01:41:29 2020]
+Finished job 7.
+12 of 61 steps (20%) done
+[Fri Mar 13 01:41:29 2020]
+Finished job 35.
+13 of 61 steps (21%) done
+
+[Fri Mar 13 01:41:29 2020]
+rule count_check:
+    input: data/mappedreads/SRR11247077.bam
+    output: data/counts/SRR11247077.txt
+    jobid: 15
+    wildcards: accession=SRR11247077
+
+
+[Fri Mar 13 01:41:29 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11247077.bam
+    output: data/calls/SRR11247077.vcf.gz
+    jobid: 49
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 01:41:30 2020]
+Finished job 15.
+14 of 61 steps (23%) done
+[Fri Mar 13 01:42:04 2020]
+Finished job 40.
+15 of 61 steps (25%) done
+
+[Fri Mar 13 01:42:04 2020]
+rule count_check:
+    input: data/mappedreads/SRR11140748.bam
+    output: data/counts/SRR11140748.txt
+    jobid: 20
+    wildcards: accession=SRR11140748
+
+
+[Fri Mar 13 01:42:04 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11140748.bam
+    output: data/calls/SRR11140748.vcf.gz
+    jobid: 59
+    wildcards: accession=SRR11140748
+
+[Fri Mar 13 01:42:06 2020]
+Finished job 20.
+16 of 61 steps (26%) done
+[Fri Mar 13 01:42:32 2020]
+Finished job 36.
+17 of 61 steps (28%) done
+
+[Fri Mar 13 01:42:32 2020]
+rule count_check:
+    input: data/mappedreads/SRR11092064.bam
+    output: data/counts/SRR11092064.txt
+    jobid: 16
+    wildcards: accession=SRR11092064
+
+
+[Fri Mar 13 01:42:32 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11092064.bam
+    output: data/calls/SRR11092064.vcf.gz
+    jobid: 51
+    wildcards: accession=SRR11092064
+
+[Fri Mar 13 01:42:32 2020]
+Finished job 16.
+18 of 61 steps (30%) done
+[Fri Mar 13 01:42:33 2020]
+Finished job 51.
+19 of 61 steps (31%) done
+
+[Fri Mar 13 01:42:33 2020]
+rule bcfindex:
+    input: data/calls/SRR11092064.vcf.gz
+    output: data/calls/SRR11092064.vcf.gz.csi
+    jobid: 52
+    wildcards: accession=SRR11092064
+
+[Fri Mar 13 01:42:33 2020]
+Finished job 52.
+20 of 61 steps (33%) done
+
+[Fri Mar 13 01:42:33 2020]
+rule consensus:
+    input: data/calls/SRR11092064.vcf.gz, data/calls/SRR11092064.vcf.gz.csi
+    output: data/consensus/SRR11092064_consensus.fa
+    jobid: 26
+    wildcards: accession=SRR11092064
+
+[Fri Mar 13 01:42:33 2020]
+Finished job 26.
+21 of 61 steps (34%) done
+
+[Fri Mar 13 01:42:33 2020]
+rule replace_name:
+    input: data/consensus/SRR11092064_consensus.fa
+    output: data/consensusfinal/SRR11092064_fconsensus.fa
+    jobid: 6
+    wildcards: accession=SRR11092064
+
+[Fri Mar 13 01:42:33 2020]
+Finished job 6.
+22 of 61 steps (36%) done
+[Fri Mar 13 01:42:36 2020]
+Finished job 49.
+23 of 61 steps (38%) done
+
+[Fri Mar 13 01:42:36 2020]
+rule bcfindex:
+    input: data/calls/SRR11247077.vcf.gz
+    output: data/calls/SRR11247077.vcf.gz.csi
+    jobid: 50
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 01:42:36 2020]
+Finished job 50.
+24 of 61 steps (39%) done
+
+[Fri Mar 13 01:42:36 2020]
+rule consensus:
+    input: data/calls/SRR11247077.vcf.gz, data/calls/SRR11247077.vcf.gz.csi
+    output: data/consensus/SRR11247077_consensus.fa
+    jobid: 25
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 01:42:36 2020]
+Finished job 25.
+25 of 61 steps (41%) done
+
+[Fri Mar 13 01:42:36 2020]
+rule replace_name:
+    input: data/consensus/SRR11247077_consensus.fa
+    output: data/consensusfinal/SRR11247077_fconsensus.fa
+    jobid: 5
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 01:42:36 2020]
+Finished job 5.
+26 of 61 steps (43%) done
+[Fri Mar 13 01:43:16 2020]
+Finished job 31.
+27 of 61 steps (44%) done
+
+[Fri Mar 13 01:43:16 2020]
+rule mpileup:
+    input: data/mappedreads/SRR8189998.bam
+    output: data/calls/SRR8189998.vcf.gz
+    jobid: 41
+    wildcards: accession=SRR8189998
+
+
+[Fri Mar 13 01:43:16 2020]
+rule count_check:
+    input: data/mappedreads/SRR8189998.bam
+    output: data/counts/SRR8189998.txt
+    jobid: 11
+    wildcards: accession=SRR8189998
+
+[Fri Mar 13 01:43:16 2020]
+Finished job 11.
+28 of 61 steps (46%) done
+[Fri Mar 13 01:43:16 2020]
+Finished job 41.
+29 of 61 steps (48%) done
+
+[Fri Mar 13 01:43:16 2020]
+rule bcfindex:
+    input: data/calls/SRR8189998.vcf.gz
+    output: data/calls/SRR8189998.vcf.gz.csi
+    jobid: 42
+    wildcards: accession=SRR8189998
+
+[Fri Mar 13 01:43:16 2020]
+Finished job 42.
+30 of 61 steps (49%) done
+
+[Fri Mar 13 01:43:16 2020]
+rule consensus:
+    input: data/calls/SRR8189998.vcf.gz, data/calls/SRR8189998.vcf.gz.csi
+    output: data/consensus/SRR8189998_consensus.fa
+    jobid: 21
+    wildcards: accession=SRR8189998
+
+[Fri Mar 13 01:43:16 2020]
+Finished job 21.
+31 of 61 steps (51%) done
+
+[Fri Mar 13 01:43:16 2020]
+rule replace_name:
+    input: data/consensus/SRR8189998_consensus.fa
+    output: data/consensusfinal/SRR8189998_fconsensus.fa
+    jobid: 1
+    wildcards: accession=SRR8189998
+
+[Fri Mar 13 01:43:16 2020]
+Finished job 1.
+32 of 61 steps (52%) done
+[Fri Mar 13 01:43:46 2020]
+Finished job 59.
+33 of 61 steps (54%) done
+
+[Fri Mar 13 01:43:46 2020]
+rule bcfindex:
+    input: data/calls/SRR11140748.vcf.gz
+    output: data/calls/SRR11140748.vcf.gz.csi
+    jobid: 60
+    wildcards: accession=SRR11140748
+
+[Fri Mar 13 01:43:46 2020]
+Finished job 60.
+34 of 61 steps (56%) done
+
+[Fri Mar 13 01:43:46 2020]
+rule consensus:
+    input: data/calls/SRR11140748.vcf.gz, data/calls/SRR11140748.vcf.gz.csi
+    output: data/consensus/SRR11140748_consensus.fa
+    jobid: 30
+    wildcards: accession=SRR11140748
+
+[Fri Mar 13 01:43:46 2020]
+Finished job 30.
+35 of 61 steps (57%) done
+
+[Fri Mar 13 01:43:46 2020]
+rule replace_name:
+    input: data/consensus/SRR11140748_consensus.fa
+    output: data/consensusfinal/SRR11140748_fconsensus.fa
+    jobid: 10
+    wildcards: accession=SRR11140748
+
+[Fri Mar 13 01:43:46 2020]
+Finished job 10.
+36 of 61 steps (59%) done
+[Fri Mar 13 01:44:32 2020]
+Finished job 32.
+37 of 61 steps (61%) done
+
+[Fri Mar 13 01:44:32 2020]
+rule count_check:
+    input: data/mappedreads/SRR2063913.bam
+    output: data/counts/SRR2063913.txt
+    jobid: 12
+    wildcards: accession=SRR2063913
+
+
+[Fri Mar 13 01:44:32 2020]
+rule mpileup:
+    input: data/mappedreads/SRR2063913.bam
+    output: data/calls/SRR2063913.vcf.gz
+    jobid: 43
+    wildcards: accession=SRR2063913
+
+[Fri Mar 13 01:44:32 2020]
+Finished job 12.
+38 of 61 steps (62%) done
+[Fri Mar 13 01:44:33 2020]
+Finished job 43.
+39 of 61 steps (64%) done
+
+[Fri Mar 13 01:44:33 2020]
+rule bcfindex:
+    input: data/calls/SRR2063913.vcf.gz
+    output: data/calls/SRR2063913.vcf.gz.csi
+    jobid: 44
+    wildcards: accession=SRR2063913
+
+[Fri Mar 13 01:44:33 2020]
+Finished job 44.
+40 of 61 steps (66%) done
+
+[Fri Mar 13 01:44:33 2020]
+rule consensus:
+    input: data/calls/SRR2063913.vcf.gz, data/calls/SRR2063913.vcf.gz.csi
+    output: data/consensus/SRR2063913_consensus.fa
+    jobid: 22
+    wildcards: accession=SRR2063913
+
+[Fri Mar 13 01:44:33 2020]
+Finished job 22.
+41 of 61 steps (67%) done
+
+[Fri Mar 13 01:44:33 2020]
+rule replace_name:
+    input: data/consensus/SRR2063913_consensus.fa
+    output: data/consensusfinal/SRR2063913_fconsensus.fa
+    jobid: 2
+    wildcards: accession=SRR2063913
+
+[Fri Mar 13 01:44:33 2020]
+Finished job 2.
+42 of 61 steps (69%) done
+[Fri Mar 13 01:46:31 2020]
+Finished job 39.
+43 of 61 steps (70%) done
+
+[Fri Mar 13 01:46:31 2020]
+rule count_check:
+    input: data/mappedreads/SRR2063922.bam
+    output: data/counts/SRR2063922.txt
+    jobid: 19
+    wildcards: accession=SRR2063922
+
+
+[Fri Mar 13 01:46:31 2020]
+rule mpileup:
+    input: data/mappedreads/SRR2063922.bam
+    output: data/calls/SRR2063922.vcf.gz
+    jobid: 57
+    wildcards: accession=SRR2063922
+
+[Fri Mar 13 01:46:31 2020]
+Finished job 19.
+44 of 61 steps (72%) done
+[Fri Mar 13 01:46:31 2020]
+Finished job 57.
+45 of 61 steps (74%) done
+
+[Fri Mar 13 01:46:31 2020]
+rule bcfindex:
+    input: data/calls/SRR2063922.vcf.gz
+    output: data/calls/SRR2063922.vcf.gz.csi
+    jobid: 58
+    wildcards: accession=SRR2063922
+
+[Fri Mar 13 01:46:31 2020]
+Finished job 58.
+46 of 61 steps (75%) done
+
+[Fri Mar 13 01:46:31 2020]
+rule consensus:
+    input: data/calls/SRR2063922.vcf.gz, data/calls/SRR2063922.vcf.gz.csi
+    output: data/consensus/SRR2063922_consensus.fa
+    jobid: 29
+    wildcards: accession=SRR2063922
+
+[Fri Mar 13 01:46:31 2020]
+Finished job 29.
+47 of 61 steps (77%) done
+
+[Fri Mar 13 01:46:31 2020]
+rule replace_name:
+    input: data/consensus/SRR2063922_consensus.fa
+    output: data/consensusfinal/SRR2063922_fconsensus.fa
+    jobid: 9
+    wildcards: accession=SRR2063922
+
+[Fri Mar 13 01:46:31 2020]
+Finished job 9.
+48 of 61 steps (79%) done
+[Fri Mar 13 01:46:35 2020]
+Finished job 38.
+49 of 61 steps (80%) done
+
+[Fri Mar 13 01:46:35 2020]
+rule mpileup:
+    input: data/mappedreads/SRR1910449.bam
+    output: data/calls/SRR1910449.vcf.gz
+    jobid: 55
+    wildcards: accession=SRR1910449
+
+
+[Fri Mar 13 01:46:35 2020]
+rule count_check:
+    input: data/mappedreads/SRR1910449.bam
+    output: data/counts/SRR1910449.txt
+    jobid: 18
+    wildcards: accession=SRR1910449
+
+[Fri Mar 13 01:46:35 2020]
+Finished job 18.
+50 of 61 steps (82%) done
+[Fri Mar 13 01:46:35 2020]
+Finished job 55.
+51 of 61 steps (84%) done
+
+[Fri Mar 13 01:46:35 2020]
+rule bcfindex:
+    input: data/calls/SRR1910449.vcf.gz
+    output: data/calls/SRR1910449.vcf.gz.csi
+    jobid: 56
+    wildcards: accession=SRR1910449
+
+[Fri Mar 13 01:46:35 2020]
+Finished job 56.
+52 of 61 steps (85%) done
+
+[Fri Mar 13 01:46:35 2020]
+rule consensus:
+    input: data/calls/SRR1910449.vcf.gz, data/calls/SRR1910449.vcf.gz.csi
+    output: data/consensus/SRR1910449_consensus.fa
+    jobid: 28
+    wildcards: accession=SRR1910449
+
+[Fri Mar 13 01:46:35 2020]
+Finished job 28.
+53 of 61 steps (87%) done
+
+[Fri Mar 13 01:46:35 2020]
+rule replace_name:
+    input: data/consensus/SRR1910449_consensus.fa
+    output: data/consensusfinal/SRR1910449_fconsensus.fa
+    jobid: 8
+    wildcards: accession=SRR1910449
+
+[Fri Mar 13 01:46:35 2020]
+Finished job 8.
+54 of 61 steps (89%) done
+[Fri Mar 13 01:46:53 2020]
+Finished job 33.
+55 of 61 steps (90%) done
+
+[Fri Mar 13 01:46:53 2020]
+rule count_check:
+    input: data/mappedreads/SRR10971381.bam
+    output: data/counts/SRR10971381.txt
+    jobid: 13
+    wildcards: accession=SRR10971381
+
+
+[Fri Mar 13 01:46:53 2020]
+rule mpileup:
+    input: data/mappedreads/SRR10971381.bam
+    output: data/calls/SRR10971381.vcf.gz
+    jobid: 45
+    wildcards: accession=SRR10971381
+
+[Fri Mar 13 01:46:54 2020]
+Finished job 13.
+56 of 61 steps (92%) done
+[Fri Mar 13 01:47:01 2020]
+Finished job 45.
+57 of 61 steps (93%) done
+
+[Fri Mar 13 01:47:01 2020]
+rule bcfindex:
+    input: data/calls/SRR10971381.vcf.gz
+    output: data/calls/SRR10971381.vcf.gz.csi
+    jobid: 46
+    wildcards: accession=SRR10971381
+
+[Fri Mar 13 01:47:01 2020]
+Finished job 46.
+58 of 61 steps (95%) done
+
+[Fri Mar 13 01:47:01 2020]
+rule consensus:
+    input: data/calls/SRR10971381.vcf.gz, data/calls/SRR10971381.vcf.gz.csi
+    output: data/consensus/SRR10971381_consensus.fa
+    jobid: 23
+    wildcards: accession=SRR10971381
+
+[Fri Mar 13 01:47:01 2020]
+Finished job 23.
+59 of 61 steps (97%) done
+
+[Fri Mar 13 01:47:01 2020]
+rule replace_name:
+    input: data/consensus/SRR10971381_consensus.fa
+    output: data/consensusfinal/SRR10971381_fconsensus.fa
+    jobid: 3
+    wildcards: accession=SRR10971381
+
+[Fri Mar 13 01:47:01 2020]
+Finished job 3.
+60 of 61 steps (98%) done
+
+[Fri Mar 13 01:47:01 2020]
+localrule all:
+    input: data/consensusfinal/SRR8189998_fconsensus.fa, data/consensusfinal/SRR2063913_fconsensus.fa, data/consensusfinal/SRR10971381_fconsensus.fa, data/consensusfinal/SRR11247075_fconsensus.fa, data/consensusfinal/SRR11247077_fconsensus.fa, data/consensusfinal/SRR11092064_fconsensus.fa, data/consensusfinal/SRR11241255_fconsensus.fa, data/consensusfinal/SRR1910449_fconsensus.fa, data/consensusfinal/SRR2063922_fconsensus.fa, data/consensusfinal/SRR11140748_fconsensus.fa, data/counts/SRR8189998.txt, data/counts/SRR2063913.txt, data/counts/SRR10971381.txt, data/counts/SRR11247075.txt, data/counts/SRR11247077.txt, data/counts/SRR11092064.txt, data/counts/SRR11241255.txt, data/counts/SRR1910449.txt, data/counts/SRR2063922.txt, data/counts/SRR11140748.txt
+    jobid: 0
+
+[Fri Mar 13 01:47:01 2020]
+Finished job 0.
+61 of 61 steps (100%) done
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T014110.452881.snakemake.log

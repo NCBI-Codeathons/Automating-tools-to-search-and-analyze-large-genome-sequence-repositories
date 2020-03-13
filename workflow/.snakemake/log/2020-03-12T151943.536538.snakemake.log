@@ -1,0 +1,19 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	hisat2_align
+	4
+
+[Thu Mar 12 15:19:43 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140744.bam
+    jobid: 1
+    wildcards: accession=SRR11140744
+
+RuleException in line 15 of /home/amaiellu/snakefile:
+NameError: The name 'accession' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

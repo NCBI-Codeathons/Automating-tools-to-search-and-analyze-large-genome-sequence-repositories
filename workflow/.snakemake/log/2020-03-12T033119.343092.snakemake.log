@@ -1,0 +1,33 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	hisat2_align
+	1	hisat2_index
+	3
+
+[Thu Mar 12 03:31:19 2020]
+rule hisat2_index:
+    input: data/GCF_009858895.2_ASM985889v3_genomic.fa
+    output: data/indexfiles/sra{*}.ht2 (dynamic)
+    jobid: 2
+
+Subsequent jobs will be added dynamically depending on the output of this job
+Dynamically updating jobs
+[Thu Mar 12 03:31:19 2020]
+Finished job 2.
+1 of 3 steps (33%) done
+
+[Thu Mar 12 03:31:19 2020]
+rule hisat2_align:
+    input: data/indexfiles/sra.8.ht2, data/indexfiles/sra.3.ht2, data/indexfiles/sra.7.ht2, data/indexfiles/sra.2.ht2, data/indexfiles/sra.4.ht2, data/indexfiles/sra.1.ht2, data/indexfiles/sra.5.ht2, data/indexfiles/sra.6.ht2
+    output: data/mappedreads/SRR11140744.bam, data/mappedreads/SRR11140746.bam, data/mappedreads/SRR11140748.bam
+    jobid: 3
+
+RuleException in line 16 of /home/amaiellu/snakefile:
+NameError: The name 'accession' is unknown in this context. Please make sure that you defined that variable. Also note that braces not used for variable access have to be escaped by repeating them, i.e. {{print $1}}

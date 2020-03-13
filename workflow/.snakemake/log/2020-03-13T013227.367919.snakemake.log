@@ -1,0 +1,136 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	11	bcfindex
+	1	combine_seq
+	11	consensus
+	10	count_check
+	11	hisat2_align
+	1	join_refseqs
+	11	mpileup
+	11	replace_name
+	68
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/{wildcards.accession}.bam
+    jobid: 67
+    wildcards: accession={wildcards.accession}
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11092064.bam
+    jobid: 37
+    wildcards: accession=SRR11092064
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR2063922.bam
+    jobid: 40
+    wildcards: accession=SRR2063922
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247077.bam
+    jobid: 36
+    wildcards: accession=SRR11247077
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR8189998.bam
+    jobid: 32
+    wildcards: accession=SRR8189998
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR1910449.bam
+    jobid: 39
+    wildcards: accession=SRR1910449
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11241255.bam
+    jobid: 38
+    wildcards: accession=SRR11241255
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140748.bam
+    jobid: 41
+    wildcards: accession=SRR11140748
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR10971381.bam
+    jobid: 34
+    wildcards: accession=SRR10971381
+
+
+[Fri Mar 13 01:32:27 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247075.bam
+    jobid: 35
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 01:32:27 2020]
+Error in rule hisat2_align:
+    jobid: 67
+    output: data/mappedreads/{wildcards.accession}.bam
+    shell:
+        hisat2 -x data/indexfiles/sra --sra-acc {wildcards.accession}| samtools view -Sb -F4 - | samtools sort - > data/mappedreads/{wildcards.accession}.bam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job hisat2_align since they might be corrupted:
+data/mappedreads/{wildcards.accession}.bam
+[Fri Mar 13 01:32:27 2020]
+Finished job 35.
+1 of 68 steps (1%) done
+
+[Fri Mar 13 01:32:28 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR2063913.bam
+    jobid: 33
+    wildcards: accession=SRR2063913
+
+[Fri Mar 13 01:32:31 2020]
+Finished job 38.
+2 of 68 steps (3%) done
+[Fri Mar 13 01:32:47 2020]
+Finished job 36.
+3 of 68 steps (4%) done
+[Fri Mar 13 01:33:20 2020]
+Finished job 41.
+4 of 68 steps (6%) done
+[Fri Mar 13 01:33:44 2020]
+Finished job 37.
+5 of 68 steps (7%) done
+[Fri Mar 13 01:34:27 2020]
+Finished job 32.
+6 of 68 steps (9%) done
+[Fri Mar 13 01:36:01 2020]
+Finished job 33.
+7 of 68 steps (10%) done
+[Fri Mar 13 01:37:47 2020]
+Finished job 39.
+8 of 68 steps (12%) done
+[Fri Mar 13 01:37:50 2020]
+Finished job 40.
+9 of 68 steps (13%) done
+[Fri Mar 13 01:38:00 2020]
+Finished job 34.
+10 of 68 steps (15%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T013227.367919.snakemake.log

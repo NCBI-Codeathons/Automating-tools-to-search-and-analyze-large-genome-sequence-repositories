@@ -1,0 +1,96 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	10	bcfindex
+	1	combine_seq
+	10	consensus
+	10	count_check
+	10	hisat2_align
+	10	mpileup
+	10	replace_name
+	62
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11092064.bam
+    jobid: 37
+    wildcards: accession=SRR11092064
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11241255.bam
+    jobid: 38
+    wildcards: accession=SRR11241255
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR10971381.bam
+    jobid: 34
+    wildcards: accession=SRR10971381
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247077.bam
+    jobid: 36
+    wildcards: accession=SRR11247077
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR1910449.bam
+    jobid: 39
+    wildcards: accession=SRR1910449
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140748.bam
+    jobid: 41
+    wildcards: accession=SRR11140748
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR2063913.bam
+    jobid: 33
+    wildcards: accession=SRR2063913
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR2063922.bam
+    jobid: 40
+    wildcards: accession=SRR2063922
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR8189998.bam
+    jobid: 32
+    wildcards: accession=SRR8189998
+
+
+[Fri Mar 13 02:01:58 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247075.bam
+    jobid: 35
+    wildcards: accession=SRR11247075
+
+[Fri Mar 13 02:01:58 2020]
+Finished job 35.
+1 of 62 steps (2%) done
+
+[Fri Mar 13 02:01:59 2020]
+rule combine_seq:
+    output: data/consensusfinal/sraseqs.fasta
+    jobid: 21
+
+RuleException in line 60 of /home/amaiellu/snakefile:
+'Wildcards' object has no attribute 'accession'

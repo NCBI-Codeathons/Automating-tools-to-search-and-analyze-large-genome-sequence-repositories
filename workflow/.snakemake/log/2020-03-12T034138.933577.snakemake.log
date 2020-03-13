@@ -1,0 +1,2 @@
+SyntaxError in line 22 of /home/amaiellu/snakefile:
+EOF in multi-line statement (snakefile, line 22)

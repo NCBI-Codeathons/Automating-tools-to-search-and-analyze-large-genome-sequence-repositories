@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	join_refseqs
+	2
+
+[Fri Mar 13 16:28:17 2020]
+rule join_refseqs:
+    input: data/consensusfinal/sraseqs.fasta
+    output: data/sequences.fasta
+    jobid: 5
+
+[Fri Mar 13 16:28:17 2020]
+Finished job 5.
+1 of 2 steps (50%) done
+
+[Fri Mar 13 16:28:17 2020]
+localrule all:
+    input: data/consensusfinal/SRR11247077_fconsensus.fa, data/consensusfinal/SRR11241255_fconsensus.fa, data/counts/SRR11247077.txt, data/counts/SRR11241255.txt, data/sequences.fasta
+    jobid: 0
+
+[Fri Mar 13 16:28:17 2020]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T162817.553070.snakemake.log

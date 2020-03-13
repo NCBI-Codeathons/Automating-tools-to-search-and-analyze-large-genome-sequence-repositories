@@ -1,0 +1,49 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	consensus
+	2	hisat2_align
+	2	index
+	2	mpileup
+	9
+
+[Thu Mar 12 16:49:42 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140746.vcf.gzdata/calls/SRR11140746.bam
+    jobid: 11
+    wildcards: accession=SRR11140746.vcf.gzdata/calls/SRR11140746
+
+
+[Thu Mar 12 16:49:42 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140748.vcf.gzdata/calls/SRR11140748.bam
+    jobid: 12
+    wildcards: accession=SRR11140748.vcf.gzdata/calls/SRR11140748
+
+[Thu Mar 12 16:49:42 2020]
+Error in rule hisat2_align:
+    jobid: 11
+[Thu Mar 12 16:49:42 2020]
+    output: data/mappedreads/SRR11140746.vcf.gzdata/calls/SRR11140746.bam
+Error in rule hisat2_align:
+    shell:
+        hisat2 -x data/indexfiles/sra --sra-acc SRR11140746.vcf.gzdata/calls/SRR11140746| samtools view -Sb -F4 - | samtools sort - > data/mappedreads/SRR11140746.vcf.gzdata/calls/SRR11140746.bam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    jobid: 12
+
+    output: data/mappedreads/SRR11140748.vcf.gzdata/calls/SRR11140748.bam
+Removing output files of failed job hisat2_align since they might be corrupted:
+data/mappedreads/SRR11140746.vcf.gzdata/calls/SRR11140746.bam
+    shell:
+        hisat2 -x data/indexfiles/sra --sra-acc SRR11140748.vcf.gzdata/calls/SRR11140748| samtools view -Sb -F4 - | samtools sort - > data/mappedreads/SRR11140748.vcf.gzdata/calls/SRR11140748.bam
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Removing output files of failed job hisat2_align since they might be corrupted:
+data/mappedreads/SRR11140748.vcf.gzdata/calls/SRR11140748.bam
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/amaiellu/.snakemake/log/2020-03-12T164942.010779.snakemake.log

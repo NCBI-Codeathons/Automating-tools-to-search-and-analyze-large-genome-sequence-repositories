@@ -1,0 +1,13 @@
+strain	virus	gisaid_epi_isl	genbank_accession	date	region	country	division	division_exposure	location	segment	length	host	age	sex	originating_lab	submitting_lab	authors	url	title
+SRR8189998	ncov	?	?	2015-01-01	Europe	Netherlands	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR2063913	ncov	?	?	2012-01-01	Asia	China	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR10971381	ncov	?	?	2020-01-02	Asia	China	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR11247075	ncov	?	?	2020-03-01	North America	?	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR11247077	ncov	?	?	2020-03-01	North America	USA	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR11092064	ncov	?	?	2019-12-30	Asia	China	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR11241255	ncov	?	?	2020-02-28	North America	USA	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR1910449	ncov	?	?	2014-05-15	North America	USA	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR2063922	ncov	?	?	2012-01-01	Asia	China	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+SRR11140748	ncov	?	?	2020-02-14	North America	USA	Unknown	Unknown	Unknown	?	?	?	?	?	?	?	?	?	?
+Wuhan-Hu-1/2019	ncov	EPI_ISL_402125	MN908947	2019-12-26	Asia	China	Hubei	Hubei	Wuhan	genome	29903	Human	?	?	unknown	National Institute for Communicable Disease Control and Prevention (ICDC) Chinese Center for Disease Control and Prevention (China CDC)	Zhang et al	https://www.gisaid.org	?
+Wuhan/WH01/2019	ncov	EPI_ISL_406798	LR757998	2019-12-26	Asia	China	Hubei	Hubei	Wuhan	genome	29866	Human	44	Male	General Hospital of Central Theater Command of People's Liberation Army of China	BGI & Institute of Microbiology, Chinese Academy of Sciences & Shandong First Medical University & Shandong Academy of Medical Sciences & General Hospital of Central Theater Command of People's Liberation Army of China	Chen et al	https://www.gisaid.org	?

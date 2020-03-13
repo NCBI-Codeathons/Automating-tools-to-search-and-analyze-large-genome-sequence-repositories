@@ -1,0 +1,29 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	join_refseqs
+	2
+
+[Fri Mar 13 02:42:54 2020]
+rule join_refseqs:
+    input: data/consensusfinal/sraseqs.fasta
+    output: data/sequences.fasta
+    jobid: 21
+
+[Fri Mar 13 02:42:54 2020]
+Finished job 21.
+1 of 2 steps (50%) done
+
+[Fri Mar 13 02:42:54 2020]
+localrule all:
+    input: data/consensusfinal/SRR8189998_fconsensus.fa, data/consensusfinal/SRR2063913_fconsensus.fa, data/consensusfinal/SRR10971381_fconsensus.fa, data/consensusfinal/SRR11247075_fconsensus.fa, data/consensusfinal/SRR11247077_fconsensus.fa, data/consensusfinal/SRR11092064_fconsensus.fa, data/consensusfinal/SRR11241255_fconsensus.fa, data/consensusfinal/SRR1910449_fconsensus.fa, data/consensusfinal/SRR2063922_fconsensus.fa, data/consensusfinal/SRR11140748_fconsensus.fa, data/counts/SRR8189998.txt, data/counts/SRR2063913.txt, data/counts/SRR10971381.txt, data/counts/SRR11247075.txt, data/counts/SRR11247077.txt, data/counts/SRR11092064.txt, data/counts/SRR11241255.txt, data/counts/SRR1910449.txt, data/counts/SRR2063922.txt, data/counts/SRR11140748.txt, data/sequences.fasta
+    jobid: 0
+
+[Fri Mar 13 02:42:54 2020]
+Finished job 0.
+2 of 2 steps (100%) done
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T024254.241641.snakemake.log

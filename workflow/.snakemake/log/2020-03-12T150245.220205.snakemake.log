@@ -1,0 +1,4 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+MissingRuleException:
+No rule to produce snakefile2 (if you use input functions make sure that they don't raise unexpected exceptions).

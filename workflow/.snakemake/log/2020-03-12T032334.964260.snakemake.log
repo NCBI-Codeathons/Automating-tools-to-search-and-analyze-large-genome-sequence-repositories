@@ -1,0 +1,31 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	hisat2_align
+	1	hisat2_index
+	3
+
+[Thu Mar 12 03:23:34 2020]
+rule hisat2_index:
+    input: data/ref.fasta
+    output: data/indexfiles/sra{*}.ht2 (dynamic)
+    jobid: 2
+
+Subsequent jobs will be added dynamically depending on the output of this job
+[Thu Mar 12 03:23:35 2020]
+Error in rule hisat2_index:
+    jobid: 2
+    output: data/indexfiles/sra{*}.ht2 (dynamic)
+    shell:
+        hisat2-build data/ref.fasta sra
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/amaiellu/.snakemake/log/2020-03-12T032334.964260.snakemake.log

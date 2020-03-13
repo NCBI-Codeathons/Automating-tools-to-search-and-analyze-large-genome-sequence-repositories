@@ -1,0 +1,60 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	replace_name
+	4
+
+[Thu Mar 12 17:09:23 2020]
+rule replace_name:
+    input: data/consensus/SRR11140748_consensus.fa
+    output: data/consensus/SRR11140748_rconsensus.fa
+    jobid: 3
+    wildcards: accession=SRR11140748
+
+
+[Thu Mar 12 17:09:23 2020]
+rule replace_name:
+    input: data/consensus/SRR11140746_consensus.fa
+    output: data/consensus/SRR11140746_rconsensus.fa
+    jobid: 2
+    wildcards: accession=SRR11140746
+
+
+[Thu Mar 12 17:09:23 2020]
+rule replace_name:
+    input: data/consensus/SRR11140744_consensus.fa
+    output: data/consensus/SRR11140744_rconsensus.fa
+    jobid: 1
+    wildcards: accession=SRR11140744
+[Thu Mar 12 17:09:23 2020]
+
+Error in rule replace_name:
+[Thu Mar 12 17:09:23 2020]
+    jobid: 3
+Error in rule replace_name:
+    output: data/consensus/SRR11140748_rconsensus.fa
+    jobid: 2
+    shell:
+        sed 's/^>.*$/>SRR11140748/' data/consensus/SRR11140748_consensus.fa>data/consensus/SRR11140748_rconsensus.fa'
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+    output: data/consensus/SRR11140746_rconsensus.fa
+
+    shell:
+        sed 's/^>.*$/>SRR11140746/' data/consensus/SRR11140746_consensus.fa>data/consensus/SRR11140746_rconsensus.fa'
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+[Thu Mar 12 17:09:23 2020]
+Error in rule replace_name:
+    jobid: 1
+    output: data/consensus/SRR11140744_rconsensus.fa
+    shell:
+        sed 's/^>.*$/>SRR11140744/' data/consensus/SRR11140744_consensus.fa>data/consensus/SRR11140744_rconsensus.fa'
+        (one of the commands exited with non-zero exit code; note that snakemake uses bash strict mode!)
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/amaiellu/.snakemake/log/2020-03-12T170923.491100.snakemake.log

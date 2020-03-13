@@ -1,0 +1,18 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	1	count_check
+	2
+
+[Fri Mar 13 02:48:38 2020]
+rule count_check:
+    input: data/mappedreads/SRR8189998.bam, data/mappedreads/SRR2063913.bam, data/mappedreads/SRR10971381.bam, data/mappedreads/SRR11247075.bam, data/mappedreads/SRR11247077.bam, data/mappedreads/SRR11092064.bam, data/mappedreads/SRR11241255.bam, data/mappedreads/SRR1910449.bam, data/mappedreads/SRR2063922.bam, data/mappedreads/SRR11140748.bam
+    output: data/counts/counts.txt
+    jobid: 11
+
+RuleException in line 15 of /home/amaiellu/snakefile:
+'InputFiles' object has no attribute 'accession'

@@ -1,0 +1,5 @@
+Building DAG of jobs...
+MissingInputException in line 16 of /home/amaiellu/snakefile:
+Missing input files for rule hisat2_align:
+B
+A

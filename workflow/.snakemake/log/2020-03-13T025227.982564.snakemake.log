@@ -1,0 +1,129 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	10	count_check
+	11
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR11247075.bam
+    output: data/counts/SRR11247075.txt
+    jobid: 14
+    wildcards: accession=SRR11247075
+
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR10971381.bam
+    output: data/counts/SRR10971381.txt
+    jobid: 13
+    wildcards: accession=SRR10971381
+
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR2063913.bam
+    output: data/counts/SRR2063913.txt
+    jobid: 12
+    wildcards: accession=SRR2063913
+
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR1910449.bam
+    output: data/counts/SRR1910449.txt
+    jobid: 18
+    wildcards: accession=SRR1910449
+
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR2063922.bam
+    output: data/counts/SRR2063922.txt
+    jobid: 19
+    wildcards: accession=SRR2063922
+
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR8189998.bam
+    output: data/counts/SRR8189998.txt
+    jobid: 11
+    wildcards: accession=SRR8189998
+
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR11092064.bam
+    output: data/counts/SRR11092064.txt
+    jobid: 16
+    wildcards: accession=SRR11092064
+
+[Fri Mar 13 02:52:28 2020]
+Finished job 12.
+1 of 11 steps (9%) done
+
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR11241255.bam
+    output: data/counts/SRR11241255.txt
+    jobid: 17
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 02:52:28 2020]
+Finished job 14.
+2 of 11 steps (18%) done
+
+[Fri Mar 13 02:52:28 2020]
+[Fri Mar 13 02:52:28 2020]
+rule count_check:
+    input: data/mappedreads/SRR11140748.bam
+    output: data/counts/SRR11140748.txt
+    jobid: 20
+    wildcards: accession=SRR11140748
+Finished job 18.
+
+3 of 11 steps (27%) done
+[Fri Mar 13 02:52:28 2020]
+
+Finished job 19.
+[Fri Mar 13 02:52:28 2020]
+4 of 11 steps (36%) done
+rule count_check:
+    input: data/mappedreads/SRR11247077.bam
+    output: data/counts/SRR11247077.txt
+    jobid: 15
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 02:52:28 2020]
+Finished job 11.
+5 of 11 steps (45%) done
+[Fri Mar 13 02:52:28 2020]
+Finished job 16.
+6 of 11 steps (55%) done
+[Fri Mar 13 02:52:28 2020]
+Finished job 17.
+7 of 11 steps (64%) done
+[Fri Mar 13 02:52:28 2020]
+Finished job 13.
+8 of 11 steps (73%) done
+[Fri Mar 13 02:52:28 2020]
+Finished job 15.
+9 of 11 steps (82%) done
+[Fri Mar 13 02:52:29 2020]
+Finished job 20.
+10 of 11 steps (91%) done
+
+[Fri Mar 13 02:52:30 2020]
+localrule all:
+    input: data/consensusfinal/SRR8189998_fconsensus.fa, data/consensusfinal/SRR2063913_fconsensus.fa, data/consensusfinal/SRR10971381_fconsensus.fa, data/consensusfinal/SRR11247075_fconsensus.fa, data/consensusfinal/SRR11247077_fconsensus.fa, data/consensusfinal/SRR11092064_fconsensus.fa, data/consensusfinal/SRR11241255_fconsensus.fa, data/consensusfinal/SRR1910449_fconsensus.fa, data/consensusfinal/SRR2063922_fconsensus.fa, data/consensusfinal/SRR11140748_fconsensus.fa, data/counts/SRR8189998.txt, data/counts/SRR2063913.txt, data/counts/SRR10971381.txt, data/counts/SRR11247075.txt, data/counts/SRR11247077.txt, data/counts/SRR11092064.txt, data/counts/SRR11241255.txt, data/counts/SRR1910449.txt, data/counts/SRR2063922.txt, data/counts/SRR11140748.txt, data/sequences.fasta
+    jobid: 0
+
+[Fri Mar 13 02:52:30 2020]
+Finished job 0.
+11 of 11 steps (100%) done
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T025227.982564.snakemake.log

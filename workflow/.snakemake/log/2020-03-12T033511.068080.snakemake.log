@@ -1,0 +1,5 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+WildcardError in line 23 of /home/amaiellu/snakefile:
+No values given for wildcard 'input'.
+  File "/home/amaiellu/snakefile", line 23, in <module>

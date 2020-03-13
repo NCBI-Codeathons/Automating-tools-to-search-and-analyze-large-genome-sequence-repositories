@@ -1,0 +1,3 @@
+KeyError in line 3 of /home/amaiellu/snakefile:
+'samples'
+  File "/home/amaiellu/snakefile", line 3, in <module>

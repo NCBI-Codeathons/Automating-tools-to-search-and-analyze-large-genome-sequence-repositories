@@ -1,0 +1,5 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+NameError in line 23 of /home/amaiellu/snakefile:
+name 'output' is not defined
+  File "/home/amaiellu/snakefile", line 23, in <module>

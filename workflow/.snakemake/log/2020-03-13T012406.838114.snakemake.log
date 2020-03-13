@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 60 of /home/amaiellu/snakefile:
+Missing input files for rule combine_seq:
+data/consensusfinal/*.fa

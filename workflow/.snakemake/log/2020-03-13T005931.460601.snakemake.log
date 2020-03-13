@@ -1,0 +1,4 @@
+Building DAG of jobs...
+MissingInputException in line 67 of /home/amaiellu/snakefile:
+Missing input files for rule join_refseqs:
+data/consensusfinal/sraseqs.fasta

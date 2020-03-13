@@ -1,0 +1,7 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+MissingInputException in line 16 of /home/amaiellu/snakefile:
+Missing input files for rule hisat2_align:
+SRR11140748
+SRR11140746
+SRR11140744

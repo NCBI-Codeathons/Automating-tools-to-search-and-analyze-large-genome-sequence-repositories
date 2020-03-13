@@ -1,0 +1,176 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	bcfindex
+	1	combine_seq
+	2	consensus
+	2	count_check
+	2	hisat2_align
+	1	join_refseqs
+	2	mpileup
+	2	replace_name
+	15
+
+[Fri Mar 13 15:05:32 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11241255.bam
+    jobid: 9
+    wildcards: accession=SRR11241255
+
+
+[Fri Mar 13 15:05:32 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11247077.bam
+    jobid: 8
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 15:05:35 2020]
+Finished job 9.
+1 of 15 steps (7%) done
+
+[Fri Mar 13 15:05:35 2020]
+rule count_check:
+    input: data/mappedreads/SRR11241255.bam
+    output: data/counts/SRR11241255.txt
+    jobid: 4
+    wildcards: accession=SRR11241255
+
+
+[Fri Mar 13 15:05:35 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11241255.bam
+    output: data/calls/SRR11241255.vcf.gz
+    jobid: 13
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 15:05:35 2020]
+Finished job 4.
+2 of 15 steps (13%) done
+[Fri Mar 13 15:05:44 2020]
+Finished job 8.
+3 of 15 steps (20%) done
+
+[Fri Mar 13 15:05:44 2020]
+rule count_check:
+    input: data/mappedreads/SRR11247077.bam
+    output: data/counts/SRR11247077.txt
+    jobid: 3
+    wildcards: accession=SRR11247077
+
+
+[Fri Mar 13 15:05:44 2020]
+rule mpileup:
+    input: data/mappedreads/SRR11247077.bam
+    output: data/calls/SRR11247077.vcf.gz
+    jobid: 11
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 15:05:45 2020]
+Finished job 3.
+4 of 15 steps (27%) done
+[Fri Mar 13 15:05:45 2020]
+Finished job 13.
+5 of 15 steps (33%) done
+
+[Fri Mar 13 15:05:45 2020]
+rule bcfindex:
+    input: data/calls/SRR11241255.vcf.gz
+    output: data/calls/SRR11241255.vcf.gz.csi
+    jobid: 14
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 15:05:45 2020]
+Finished job 14.
+6 of 15 steps (40%) done
+
+[Fri Mar 13 15:05:45 2020]
+rule consensus:
+    input: data/calls/SRR11241255.vcf.gz, data/calls/SRR11241255.vcf.gz.csi
+    output: data/consensus/SRR11241255_consensus.fa
+    jobid: 7
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 15:05:45 2020]
+Finished job 7.
+7 of 15 steps (47%) done
+
+[Fri Mar 13 15:05:45 2020]
+rule replace_name:
+    input: data/consensus/SRR11241255_consensus.fa
+    output: data/consensusfinal/SRR11241255_fconsensus.fa
+    jobid: 2
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 15:05:45 2020]
+Finished job 2.
+8 of 15 steps (53%) done
+[Fri Mar 13 15:06:32 2020]
+Finished job 11.
+9 of 15 steps (60%) done
+
+[Fri Mar 13 15:06:32 2020]
+rule bcfindex:
+    input: data/calls/SRR11247077.vcf.gz
+    output: data/calls/SRR11247077.vcf.gz.csi
+    jobid: 12
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 15:06:32 2020]
+Finished job 12.
+10 of 15 steps (67%) done
+
+[Fri Mar 13 15:06:32 2020]
+rule consensus:
+    input: data/calls/SRR11247077.vcf.gz, data/calls/SRR11247077.vcf.gz.csi
+    output: data/consensus/SRR11247077_consensus.fa
+    jobid: 6
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 15:06:32 2020]
+Finished job 6.
+11 of 15 steps (73%) done
+
+[Fri Mar 13 15:06:32 2020]
+rule replace_name:
+    input: data/consensus/SRR11247077_consensus.fa
+    output: data/consensusfinal/SRR11247077_fconsensus.fa
+    jobid: 1
+    wildcards: accession=SRR11247077
+
+[Fri Mar 13 15:06:32 2020]
+Finished job 1.
+12 of 15 steps (80%) done
+
+[Fri Mar 13 15:06:32 2020]
+rule combine_seq:
+    input: data/consensusfinal/SRR11247077_fconsensus.fa, data/consensusfinal/SRR11241255_fconsensus.fa
+    output: data/consensusfinal/sraseqs.fasta
+    jobid: 10
+
+[Fri Mar 13 15:06:32 2020]
+Finished job 10.
+13 of 15 steps (87%) done
+
+[Fri Mar 13 15:06:32 2020]
+rule join_refseqs:
+    input: data/consensusfinal/sraseqs.fasta
+    output: data/sequences.fasta
+    jobid: 5
+
+[Fri Mar 13 15:06:32 2020]
+Finished job 5.
+14 of 15 steps (93%) done
+
+[Fri Mar 13 15:06:32 2020]
+localrule all:
+    input: data/consensusfinal/SRR11247077_fconsensus.fa, data/consensusfinal/SRR11241255_fconsensus.fa, data/counts/SRR11247077.txt, data/counts/SRR11241255.txt, data/sequences.fasta
+    jobid: 0
+
+[Fri Mar 13 15:06:32 2020]
+Finished job 0.
+15 of 15 steps (100%) done
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T150532.892653.snakemake.log

@@ -1,0 +1,5 @@
+# HSTS 1.0 Known Hosts database for GNU Wget.
+# Edit at your own risk.
+# <hostname>	<port>	<incl. subdomains>	<created>	<max-age>
+ftp.ncbi.nlm.nih.gov	0	1	1583955932	31536000
+cloud.biohpc.swmed.edu	0	1	1583955512	15768000

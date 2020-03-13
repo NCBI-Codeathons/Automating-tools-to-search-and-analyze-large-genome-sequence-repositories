@@ -1,0 +1,50 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	3	hisat2_align
+	4
+
+[Thu Mar 12 14:35:51 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140748.bam
+    jobid: 3
+    wildcards: accession=SRR11140748
+
+
+[Thu Mar 12 14:35:51 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140744.bam
+    jobid: 1
+    wildcards: accession=SRR11140744
+
+
+[Thu Mar 12 14:35:51 2020]
+rule hisat2_align:
+    output: data/mappedreads/SRR11140746.bam
+    jobid: 2
+    wildcards: accession=SRR11140746
+
+[Thu Mar 12 14:36:23 2020]
+Finished job 2.
+1 of 4 steps (25%) done
+[Thu Mar 12 14:36:33 2020]
+Finished job 1.
+2 of 4 steps (50%) done
+[Thu Mar 12 14:37:28 2020]
+Finished job 3.
+3 of 4 steps (75%) done
+
+[Thu Mar 12 14:37:28 2020]
+localrule all:
+    input: data/mappedreads/SRR11140744.bam, data/mappedreads/SRR11140746.bam, data/mappedreads/SRR11140748.bam
+    jobid: 0
+
+[Thu Mar 12 14:37:28 2020]
+Finished job 0.
+4 of 4 steps (100%) done
+Complete log: /home/amaiellu/.snakemake/log/2020-03-12T143551.841375.snakemake.log

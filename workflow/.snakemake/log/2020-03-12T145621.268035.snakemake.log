@@ -1,0 +1,4 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+Nothing to be done.
+Complete log: /home/amaiellu/.snakemake/log/2020-03-12T145621.268035.snakemake.log

@@ -1,0 +1,4 @@
+Building DAG of jobs...
+WildcardError in line 16 of /home/amaiellu/snakefile:
+Wildcards in input files cannot be determined from output files:
+'runid'

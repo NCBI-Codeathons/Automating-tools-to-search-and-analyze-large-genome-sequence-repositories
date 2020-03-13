@@ -1,0 +1,72 @@
+configfile: "configtest.json"
+
+rule all: 
+	input: 
+		expand("data/consensusfinal/{accession}_fconsensus.fa", accession=config["samples"]),
+		expand("data/counts/{accession}.txt",accession=config['samples']),
+		"data/sequences.fasta"
+
+rule hisat2_align:
+	output:	
+		"data/mappedreads/{accession}.bam"		
+	shell:
+		"hisat2 -x data/indexfiles/sra --sra-acc {wildcards.accession}| samtools view -Sb -F4 - | samtools sort - > {output}"
+
+rule count_check:
+	input: 
+		"data/mappedreads/{accession}.bam"
+	output:
+		"data/counts/{accession}.txt"
+	shell:  
+		"samtools view -c {input} > {output}"
+		
+rule mpileup: 
+	input: 
+		bams="data/mappedreads/{accession}.bam",
+
+	output:
+		"data/calls/{accession}.vcf.gz"
+	
+	shell:
+		"bcftools mpileup -Ou -f data/GCF_009858895.2_ASM985889v3_genomic.fa {input.bams}  | bcftools call -mv -Oz -o {output}"
+
+rule bcfindex:
+	input:
+		"data/calls/{accession}.vcf.gz"
+	output:
+		"data/calls/{accession}.vcf.gz.csi"	
+
+	shell:
+		"bcftools index {input}"
+
+rule consensus:
+	input:
+		vcf="data/calls/{accession}.vcf.gz",
+		index="data/calls/{accession}.vcf.gz.csi"	
+	output:
+		"data/consensus/{accession}_consensus.fa"
+	
+	shell:
+		"cat data/GCF_009858895.2_ASM985889v3_genomic.fa | bcftools consensus {input.vcf} > {output}"
+rule replace_name:
+	input:
+		"data/consensus/{accession}_consensus.fa"
+	output:
+		"data/consensusfinal/{accession}_fconsensus.fa"
+	shell:
+		"sed 's/^>.*$/>{wildcards.accession}/' {input}>{output}"
+rule combine_seq:
+	input: 
+		expand("data/consensusfinal/{accession}_fconsensus.fa",accession=config['samples'])
+	output: 
+		"data/consensusfinal/sraseqs.fasta",
+	shell:
+		"cat {input}> {output}"
+
+rule join_refseqs:
+	input:
+		"data/consensusfinal/sraseqs.fasta"
+	output:
+		"data/sequences.fasta"
+	shell:
+		"cat {input} refseqs.fasta > {output}"

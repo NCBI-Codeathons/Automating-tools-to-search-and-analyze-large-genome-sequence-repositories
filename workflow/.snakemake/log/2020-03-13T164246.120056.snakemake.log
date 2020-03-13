@@ -1,0 +1,42 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 16
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	all
+	2	count_check
+	1	evaluate
+	4
+
+[Fri Mar 13 16:42:46 2020]
+rule count_check:
+    input: data/mappedreads/SRR11247077.bam
+    output: data/counts/SRR11247077.txt
+    jobid: 3
+    wildcards: accession=SRR11247077
+
+
+[Fri Mar 13 16:42:46 2020]
+rule count_check:
+    input: data/mappedreads/SRR11241255.bam
+    output: data/counts/SRR11241255.txt
+    jobid: 4
+    wildcards: accession=SRR11241255
+
+[Fri Mar 13 16:42:46 2020]
+Finished job 4.
+1 of 4 steps (25%) done
+[Fri Mar 13 16:42:46 2020]
+Finished job 3.
+2 of 4 steps (50%) done
+
+[Fri Mar 13 16:42:46 2020]
+rule evaluate:
+    input: data/counts/SRR11247077.txt, data/counts/SRR11241255.txt
+    output: data/qconfig.json
+    jobid: 5
+
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+Complete log: /home/amaiellu/.snakemake/log/2020-03-13T164246.120056.snakemake.log

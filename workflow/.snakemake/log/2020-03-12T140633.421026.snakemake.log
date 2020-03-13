@@ -1,0 +1,6 @@
+Dynamic output is deprecated in favor of checkpoints (see docs). It will be removed in Snakemake 6.0.
+Building DAG of jobs...
+InputFunctionException in line 16 of /home/amaiellu/snakefile:
+TypeError: string indices must be integers
+Wildcards:
+sample=SRR11140744 SRR11140746 SRR11140748

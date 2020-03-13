@@ -1,0 +1,2 @@
+SyntaxError in line 31 of /home/amaiellu/snakefile:
+Unexpected keyword rule in rule definition (snakefile, line 31)
