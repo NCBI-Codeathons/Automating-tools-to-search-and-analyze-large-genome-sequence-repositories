@@ -38,7 +38,7 @@ auspice view --datasetDir auspice
 - Joe McGirr (joemcgirr)
 
 # Forthcoming features
-We are automating the process of wrangling metadata for full genome assemblies. 
+We are automating the process of wrangling metadata for full genome assemblies with `ncov_assemblies.sh`
 
 # Dependencies
 See Dockerfile
