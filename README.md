@@ -5,28 +5,32 @@ Labs around the world are sequencing coronavirus (hCoV-19) to monitor how it spr
 
 ## Workflow to analyze publicly available hCoV-19 SRA reads with Nextstrain
 1. Identify hCoV-19 sequences
-..*using the NCBI SRA Taxonomy Analysis Tool (STAT)
-..*using whole genome assemblies [here](https://www.ncbi.nlm.nih.gov/core/assets/genbank/files/ncov-sequences.yaml)
+  *using the NCBI SRA Taxonomy Analysis Tool (STAT)
+  *using whole genome assemblies [here](https://www.ncbi.nlm.nih.gov/core/assets/genbank/files/ncov-sequences.yaml)
 2. Extract metadata to match Nexstrain input
-3. Download SRA data and generate consensus sequences for each run
+3. Download SRA data
 4. Run Nextstrain for analyses and visualization
 
 
 ![alt text](https://github.com/NCBI-Codeathons/Automating-tools-to-search-and-analyze-large-genome-sequence-repositories/blob/master/workflow-01.png "Logo Title Text 1")
 
 
-### 1. Identify hCoV-19 sequences using the NCBI SRA Taxonomy Analysis Tool (STAT)
-Vadim Identify hCoV-19 SRA reads with STAT
+### 1. Identify hCoV-19 sequences 
+The NCBI SRA Taxonomy Analysis Tool (STAT) can identify SRA runs with kmers matching hCoV-19. We identified runs containing >1000 matching kmers. Alternatively, there are full genome assemblies available for hCoV-19 that can be used. Assemblies can be run without generating alignments and consensus sequences (see below). 
+
 ### 2. Extract metadata to match Nexstrain input
-Alison metadata wrangling
+We created a snakemake that will create `metadata.tsv` containing metadata for SRA runs identified with STAT.
 ### 3. Download SRA data and generate consensus sequences for each run
-Alison snakemake. 
-a. download SRA reads
-b. map to Wuhan reference genome
-c. identify variable sites
-d. generate consensus sequence
+The snakemake will also generate `sequences.fasta` by 
+  *downloading SRA reads
+  *mapping them to the [Wuhan reference genome](https://www.ncbi.nlm.nih.gov/nuccore/MN908947.3/) (hisat2)
+  *identifying variable sites
+  *generate consensus sequences (bcftools)
 ### 4. Run Nextstrain for analyses and visualization
-snakemake in the cloud
+Finally, we add `metadata.tsv` `sequences.fasta` and run snakemake -p to produce Nextstrain results that can be viewed with
+```
+auspice view --datasetDir auspice
+```
 
 # Team
 Our fearless leader: Vadim Zalunin (vadimzalunin)
@@ -36,7 +40,7 @@ Alison Schaefer (amaiellu)
 Joe McGirr (joemcgirr)
 
 # Forthcoming features
-
-# Architecture
+We are automating the process of wrangling metadata for full genome assemblies. 
 
 # Dependencies
+See Dockerfile
